@@ -1,5 +1,7 @@
 @extends('admin.template.template')
+@section('title') {{'List Racun'}} @endsection
 @section('content')
+
 
 <div class="app-content">
     <div class="content-wrapper">
@@ -8,8 +10,7 @@
                 <div class="col">
                     <div class="page-description d-flex align-items-center">
                         <div class="page-description-content flex-grow-1">
-                            <h1>All List</h1>
-
+                            <h1>List Racun</h1>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@
                                         </ul>
                                     </div>
                                     @endif
-                                    <form class="row g-3" action="{{ route('list.store') }}" method="post">
+                                    <form class="row g-3" action="{{ route('list.store') }}" method="POST">
                                         @csrf
                                         <div class="col-md-12">
                                             <label for="namaRacun" class="form-label">Nama Racun</label>
@@ -54,7 +55,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <label for="jenisRacun" class="form-label">Jenis Racun</label>
-                                            <select id="jenisRacun" name="jenisRacun" class="form-select">
+                                            <select id="jenisRacun" name="jenisRacun" class="form-select" required="" data-msg-required="Pilih jenis racun.">
                                                 <option selected>Choose...</option>
                                                 <option>Pembakar</option>
                                                 <option>Semut</option>
@@ -63,7 +64,7 @@
                                             </select>
                                         </div>
                                         <div class="col-md-12">
-                                            <label for="stok" class="form-label">Stok</label>
+                                            <label for="stok" class="form-label" required>Stok</label>
                                             <input type="text" name="stok" class="form-control" id="stok">
                                         </div>
                                         <div class="col-md-12 text-center">

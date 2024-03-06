@@ -1,4 +1,5 @@
 @extends('admin.template.template')
+@section('title') {{'Update Data Racun'}} @endsection
 @section('content')
 
 <div class="app-content">
@@ -20,16 +21,24 @@
                         <div class="card-body">
                             <div class="example-container">
                                 <div class="example-content">
-                                    @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
+                                    <div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="validationModalLabel">Validation Error</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    @if ($errors->any())
+                                                    <p>{{ $errors->first() }}</p>
+                                                    @endif
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    @endif
 
                                     <form class="row g-3" action="{{ route('list.update', $racun->id_racun) }}" method="post">
                                         @csrf
@@ -57,11 +66,11 @@
                                         <div class="col-md-12">
                                             <label for="jenisRacun" class="form-label">Jenis Racun</label>
                                             <select id="jenisRacun" name="jenisRacun" class="form-select">
-                                                <option selected>Choose...</option>
-                                                <option>Pembakar</option>
-                                                <option>Semut</option>
-                                                <option>Tikus</option>
-                                                <option>-</option>
+                                                <option value="" {{ old('jenisRacun', $racun->jenis_racun) == '' ? 'selected' : '' }}>Choose...</option>
+                                                <option value="Pembakar" {{ old('jenisRacun', $racun->jenis_racun) == 'Pembakar' ? 'selected' : '' }}>Pembakar</option>
+                                                <option value="Semut" {{ old('jenisRacun', $racun->jenis_racun) == 'Semut' ? 'selected' : '' }}>Semut</option>
+                                                <option value="Tikus" {{ old('jenisRacun', $racun->jenis_racun) == 'Tikus' ? 'selected' : '' }}>Tikus</option>
+                                                <option value="-" {{ old('jenisRacun', $racun->jenis_racun) == '-' ? 'selected' : '' }}>-</option>
                                             </select>
                                         </div>
                                         <div class="col-md-12">

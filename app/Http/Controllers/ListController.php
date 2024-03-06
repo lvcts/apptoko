@@ -47,6 +47,7 @@ class ListController extends Controller
             'stok' => 'required'
 
         ]);
+        $timestamp = now();
         DB::table('racun_models')->insert([
             'nama_racun' => $request->namaRacun,
             'harga_racun' => $request->hargaRacun,
@@ -55,12 +56,13 @@ class ListController extends Controller
             'kode_racun' => $request->kodeRacun,
             'jenis_racun' => $request->jenisRacun,
             'stok' => $request->stok,
+            'created_at' => $timestamp,
+            'updated_at' => $timestamp,
 
         ]);
 
         // RacunModel::create($request->all());
-
-        return redirect()->action([ListController::class, 'index'])
+        return redirect()->route('list.index')
             ->with('success', 'Product created successfully.');
     }
 
@@ -95,7 +97,7 @@ class ListController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $racun): RedirectResponse
+    public function update(Request $request, $id_racun): RedirectResponse
     {
 
         $request->validate([
@@ -108,8 +110,18 @@ class ListController extends Controller
             'stok' => 'required'
 
         ]);
-        $find = RacunModel::find($racun);
-        $find->update($request->all());
+        $find = RacunModel::find($id_racun);
+        $timestamp = now();
+        $find->update([
+            'nama_racun' => $request->namaRacun,
+            'harga_racun' => $request->hargaRacun,
+            'modal_racun' => $request->modalRacun,
+            'volume' => $request->volume,
+            'kode_racun' => $request->kodeRacun,
+            'jenis_racun' => $request->jenisRacun,
+            'stok' => $request->stok,
+            'updated_at' => $timestamp,
+        ]);
         return back()->with('success', 'Product updated successfully');
     }
 

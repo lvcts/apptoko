@@ -11,7 +11,7 @@
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Neptune - Responsive Admin Dashboard Template</title>
+    <title> @yield('title')</title>
 
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -29,7 +29,7 @@
     <link href="{{asset('assets')}}/css/horizontal-menu/horizontal-menu.css" rel="stylesheet">
     <link href="{{asset('assets')}}/css/custom.css" rel="stylesheet">
 
-    <!-- <link href="{{asset('assets')}}/css/darktheme.css" rel="stylesheet"> -->
+    <link href="{{asset('assets')}}/css/darktheme.css" rel="stylesheet">
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/images/neptune.png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/neptune.png')}}" />
@@ -64,7 +64,7 @@
                     <div class="container-fluid">
                         <div class="navbar-nav" id="navbarNav">
                             <div class="logo">
-                                <a href="{{ url('/') }}">Neptune</a>
+                                <a href="{{ url('/') }}">AbdillahTani</a>
                             </div>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
