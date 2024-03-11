@@ -20,8 +20,7 @@ class RacunController extends Controller
         // mengambil data dari table racun models
         $racun = DB::table('racun_models')->paginate(10);
 
-        // mengirim data racun ke view index
-        return view('admin.scan', ['racun' => $racun]); //'racun' adalah key
+        return view('admin.scan', compact('racun'));
     }
     public function scan(Request $request)
     {
@@ -35,5 +34,19 @@ class RacunController extends Controller
 
         // mengirim data pegawai ke view index
         return view('admin.scan', ['racun' => $racun]);
+    }
+    public function cari(Request $request)
+    {       // menangkap data pencarian
+        $cari = $request->cari; //request dari form
+
+        // mengambil data dari table racun sesuai pencarian data
+        $racun = DB::table('racun_models')
+            ->where('nama_racun', 'like', "%" . $cari . "%")
+            ->orWhere('kode_racun', 'like', "%" . $cari . "%")
+            ->paginate(10);
+
+
+        // mengirim data pegawai ke view index
+        return view('admin.scan', compact('racun'));
     }
 }

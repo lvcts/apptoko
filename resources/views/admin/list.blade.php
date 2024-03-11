@@ -127,8 +127,10 @@
                                     <tbody>
                                         <tr>
                                             <td> {{$item -> nama_racun}}</td>
-                                            <td>{{$item -> harga_racun}}</td>
-                                            <td>{{$item -> modal_racun}}</td>
+                                            <td>
+                                                <?php echo number_format($item->harga_racun); ?>
+                                            </td>
+                                            <td><?php echo number_format($item->modal_racun); ?></td>
                                             <td>{{$item -> volume}}</td>
                                             <td>{{$item -> kode_racun}}</td>
                                             <td>{{$item -> jenis_racun}}</td>

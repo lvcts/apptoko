@@ -29,10 +29,12 @@
     <link href="{{asset('assets')}}/css/horizontal-menu/horizontal-menu.css" rel="stylesheet">
     <link href="{{asset('assets')}}/css/custom.css" rel="stylesheet">
 
-    <link href="{{asset('assets')}}/css/darktheme.css" rel="stylesheet">
+    <!-- <link href="{{asset('assets')}}/css/darktheme.css" rel="stylesheet"> -->
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{url('assets/images/neptune.png')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/neptune.png')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/a8887d2145.js" crossorigin="anonymous"></script>
 
     <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script> -->
@@ -80,7 +82,7 @@
                                         <li><a class="dropdown-item" href="#">Create Project</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown hidden-on-mobile">
+                                <!-- <li class="nav-item dropdown hidden-on-mobile">
                                     <a class="nav-link dropdown-toggle" href="#" id="exploreDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="material-icons-outlined">explore</i>
                                     </a>
@@ -112,13 +114,13 @@
                                             <button class="btn btn-primary">Create new repository</button>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
                             </ul>
 
                         </div>
                         <div class="d-flex">
                             <ul class="navbar-nav">
-                                <li class="nav-item hidden-on-mobile">
+                                <!-- <li class="nav-item hidden-on-mobile">
                                     <a class="nav-link active" href="#">Applications</a>
                                 </li>
                                 <li class="nav-item hidden-on-mobile">
@@ -210,7 +212,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
@@ -226,222 +228,20 @@
                             <a href="#">Apps<i class="material-icons has-sub-menu">keyboard_arrow_down</i></a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="mailbox.html">Mailbox<span class="badge rounded-pill badge-danger float-end">87</span></a>
+                                    <a href="{{ url('/list') }}">List Racun</a>
                                 </li>
                                 <li>
-                                    <a href="file-manager.html">File Manager</a>
+                                    <a href="{{ url('/scan') }}">Menu Transaksi</a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <a href="calendar.html">Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>
                                 </li>
                                 <li>
                                     <a href="todo.html">Todo</a>
-                                </li>
+                                </li> -->
                             </ul>
                         </li>
-                        <li>
-                            <a href="#">Pages<i class="material-icons has-sub-menu">keyboard_arrow_down</i></a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="pricing.html">Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="invoice.html">Invoice</a>
-                                </li>
-                                <li>
-                                    <a href="settings.html">Settings</a>
-                                </li>
-                                <li>
-                                    <a href="#">Authentication<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="sign-in.html">Sign In</a>
-                                        </li>
-                                        <li>
-                                            <a href="sign-up.html">Sign Up</a>
-                                        </li>
-                                        <li>
-                                            <a href="lock-screen.html">Lock Screen</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="error.html">Error</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Elements<i class="material-icons has-sub-menu">keyboard_arrow_down</i></a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="ui-alerts.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="ui-avatars.html">Avatars</a>
-                                </li>
-                                <li>
-                                    <a href="ui-badge.html">Badge</a>
-                                </li>
-                                <li>
-                                    <a href="ui-breadcrumbs.html">Breadcrumbs</a>
-                                </li>
-                                <li>
-                                    <a href="ui-buttons.html">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="ui-button-groups.html">Button Groups</a>
-                                </li>
-                                <li>
-                                    <a href="ui-collapse.html">Collapse</a>
-                                </li>
-                                <li>
-                                    <a href="ui-dropdown.html">Dropdown</a>
-                                </li>
-                                <li>
-                                    <a href="ui-images.html">Images</a>
-                                </li>
-                                <li>
-                                    <a href="ui-pagination.html">Pagination</a>
-                                </li>
-                                <li>
-                                    <a href="ui-popovers.html">Popovers</a>
-                                </li>
-                                <li>
-                                    <a href="ui-progress.html">Progress</a>
-                                </li>
-                                <li>
-                                    <a href="ui-spinners.html">Spinners</a>
-                                </li>
-                                <li>
-                                    <a href="ui-toast.html">Toast</a>
-                                </li>
-                                <li>
-                                    <a href="ui-tooltips.html">Tooltips</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Components<i class="material-icons has-sub-menu">keyboard_arrow_down</i></a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="components-accordions.html">Accordions</a>
-                                </li>
-                                <li>
-                                    <a href="components-block-ui.html">Block UI</a>
-                                </li>
-                                <li>
-                                    <a href="components-cards.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="components-carousel.html">Carousel</a>
-                                </li>
-                                <li>
-                                    <a href="components-countdown.html">Countdown</a>
-                                </li>
-                                <li>
-                                    <a href="components-lightbox.html">Lightbox</a>
-                                </li>
-                                <li>
-                                    <a href="components-lists.html">Lists</a>
-                                </li>
-                                <li>
-                                    <a href="components-modals.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="components-tabs.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="components-session-timeout.html">Session Timeout</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="widgets.html">Widgets</a>
-                        </li>
-                        <li>
-                            <a href="#">Charts<i class="material-icons has-sub-menu">keyboard_arrow_down</i></a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="charts-apex.html">Apex</a>
-                                </li>
-                                <li>
-                                    <a href="charts-chartjs.html">ChartJS</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Content<i class="material-icons has-sub-menu">keyboard_arrow_down</i></a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="content-page-headings.html">Page Headings</a>
-                                </li>
-                                <li>
-                                    <a href="content-section-headings.html">Section Headings</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Other<i class="material-icons has-sub-menu">keyboard_arrow_down</i></a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="#">Styles<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="styles-typography.html">Typography</a>
-                                        </li>
-                                        <li>
-                                            <a href="styles-code.html">Code</a>
-                                        </li>
-                                        <li>
-                                            <a href="styles-icons.html">Icons</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Tables<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="tables-basic.html">Basic</a>
-                                        </li>
-                                        <li>
-                                            <a href="tables-datatable.html">DataTable</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Forms<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="forms-basic.html">Basic</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-input-groups.html">Input Groups</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-input-masks.html">Input Masks</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-layouts.html">Form Layouts</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-validation.html">Form Validation</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-file-upload.html">File Upload</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-text-editor.html">Text Editor</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-datepickers.html">Datepickers</a>
-                                        </li>
-                                        <li>
-                                            <a href="forms-select2.html">Select2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ route('logout.perform') }}"> Logout</a></li>
                     </ul>
                 </div>
             </div>

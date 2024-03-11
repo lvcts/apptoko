@@ -68,8 +68,8 @@
 
                 <form method="POST" action="{{ route('login.authenticate') }}">
                     @csrf
-                    <label for="signInEmail" class="form-label">Username</label>
-                    <input type="email" name="email" class="form-control m-b-md" id="signInEmail" aria-describedby="signInEmail" placeholder="example@neptune.com">
+                    <label for="signInEmail" class="form-label">Email</label>
+                    <input type="email" name="name" class="form-control m-b-md" id="signInEmail" aria-describedby="signInEmail" placeholder="example@neptune.com">
 
                     <label for="signInPassword" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" id="signInPassword" aria-describedby="signInPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
