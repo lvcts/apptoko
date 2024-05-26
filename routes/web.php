@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\RacunController;
+
 
 
 
@@ -41,11 +43,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', function () {
         return view('admin.index');
     });
-    Route::get('/scan', [App\Http\Controllers\RacunController::class, 'index']);
-    Route::get('/cart', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
-    Route::post('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'add'])->name('cart.add');
-    Route::post('/cart/update/{id}', [App\Http\Controllers\CartController::class, 'update'])->name('cart.update');
-    Route::post('/cart/remove/{id}', [App\Http\Controllers\CartController::class, 'remove'])->name('cart.remove');
+    Route::get('/scan', [RacunController::class, 'index'])->name('scan');
+    Route::post('/scan/add', [RacunController::class, 'addToCart'])->name('cart.add');
+    Route::post('/scan/update', [RacunController::class, 'updateCart'])->name('scan.update');
     Route::get('/logout', [App\Http\Controllers\LogoutController::class, 'logout'])->name('logout.perform');
 });
 

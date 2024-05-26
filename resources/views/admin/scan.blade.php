@@ -13,18 +13,42 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="col-xl-4">
-                    <div class="card widget widget-stats">
-                        <div class="input-group mb-3">
-                            <form action="/scan/scan" method="get">
-                                <input type="text" name="scan" class="form-control form-control-solid" placeholder="Enter Code" aria-label="Enter Code" aria-describedby="custom-addon2">
-                                <button type="submit" class="input-group-text input-group-text-solid" id="custom-addon2" value="scan">Scan Now</button>
-                            </form>
-                        </div>
-                    </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Cart</h3>
                 </div>
-            </div> -->
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Racun Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($cartItems as $cartItem)
+                            <tr>
+                                <td>{{ $cartItem->racun->nama_racun }}</td>
+                                <td>{{ $cartItem->quantity }}</td>
+                                <td>{{ $cartItem->racun->harga_racun }}</td>
+                                <td>{{ $cartItem->quantity * $cartItem->racun->harga_racun }}</td>
+                                <td>
+                                    <form action="{{ route('cart.remove', ['id' => $cartItem->id]) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col">
                     <div class="card">
